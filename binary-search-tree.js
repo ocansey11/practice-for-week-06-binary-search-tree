@@ -46,6 +46,27 @@ class BinarySearchTree {
 
   search(val) {
     // Your code here
+    let currentNode = this.root;
+
+    while (currentNode.val !== null) {
+      if (val == currentNode.val) {
+        return true
+      };
+      if(val <= currentNode.val){
+        if(currentNode.left == null){
+          return false
+        }else{
+          currentNode = currentNode.left
+        }
+      }
+      else if(val > currentNode.val){
+        if (currentNode.right == null){
+          return false
+        }else{
+          currentNode = currentNode.right
+        }
+      }
+    }
   }
 
 
